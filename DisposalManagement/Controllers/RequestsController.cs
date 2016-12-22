@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using DisposalManagement.Models;
+using DisposalManagement.MailSender;
 
 namespace DisposalManagement.Controllers
 {
@@ -79,6 +80,8 @@ namespace DisposalManagement.Controllers
                 return BadRequest(ModelState);
             }
 
+            Sender sender = new Sender();
+            sender.send(request.ClientEmail, "Uw aanvraag is aangekregen","Uw aanvrag is aangekomen en zal zo snel mogelijk verwerkt worden.");
             db.Requests.Add(request);
             db.SaveChanges();
 
