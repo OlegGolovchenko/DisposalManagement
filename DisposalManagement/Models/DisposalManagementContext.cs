@@ -25,6 +25,5 @@ namespace DisposalManagement.Models
 
         public DbSet<Request> Requests { get; set; }
         public DbSet<Manager> Managers { get; set; }
-
     }
 }
