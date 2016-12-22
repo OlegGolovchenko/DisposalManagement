@@ -25,7 +25,7 @@ namespace DisposalManagement.Models
             Manager Harry = new Manager
             {
                 Name = "Harry",
-                Email = "Harry@Deb.com",
+                Email = "dragster10@icqmail.com",
                 PostalCode = "2640"
             };
             context.Managers.Add(Larry);
