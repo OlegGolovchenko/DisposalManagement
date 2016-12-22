@@ -84,8 +84,9 @@ namespace DisposalManagement.Controllers
             sender.send(request.ClientEmail, "Uw aanvraag is aangekregen",
                 "Uw aanvrag is aangekomen en zal zo snel mogelijk verwerkt worden.");
 
-            string email = db.Managers.Find(request.ClientPostalCode).Email;
-            sender.send(email, "Een nieuwe aanvraag is binnegekomen", 
+            var manager = db.Managers.First(em=>em.PostalCode==request.ClientPostalCode);
+
+            sender.send(manager.Email, "Een nieuwe aanvraag is binnegekomen", 
                 "aanvraag ontvangen van" + 
                 (request.Intern ? " interne klant " : " externe klant ") + 
                 request.ClientName + " voor container " + request.ContainerId + " op te halen");
