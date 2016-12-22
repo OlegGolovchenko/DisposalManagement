@@ -14,7 +14,7 @@ namespace DisposalManagement.Models
         // automatically whenever you change your model schema, please use data migrations.
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
-        public DbSet<Manager> Managers { get; set; }
+     
         public DisposalManagementContext() : base("name=DisposalManagementContext")
         {
               
@@ -23,6 +23,8 @@ namespace DisposalManagement.Models
         
     }
 
-        public System.Data.Entity.DbSet<DisposalManagement.Models.Request> Requests { get; set; }
+        public DbSet<Request> Requests { get; set; }
+        public DbSet<Manager> Managers { get; set; }
+
     }
 }
