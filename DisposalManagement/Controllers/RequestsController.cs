@@ -82,6 +82,7 @@ namespace DisposalManagement.Controllers
 
             Sender sender = new Sender();
             sender.send(request.ClientEmail, "Uw aanvraag is aangekregen","Uw aanvrag is aangekomen en zal zo snel mogelijk verwerkt worden.");
+            
             db.Requests.Add(request);
             db.SaveChanges();
 
